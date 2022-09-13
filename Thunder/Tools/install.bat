@@ -1,3 +1,36 @@
+::[Bat To Exe Converter]
+::
+::YAwzoRdxOk+EWAjk
+::fBw5plQjdCiDJGmW+0g1Kw9HcDeNOn+KB7YX6e/+096Pt0MZUfADTIDU1qeyFOgG5EHhZ9gk1XU6
+::YAwzuBVtJxjWCl3EqQJgSA==
+::ZR4luwNxJguZRRnk
+::Yhs/ulQjdF+5
+::cxAkpRVqdFKZSTk=
+::cBs/ulQjdF+5
+::ZR41oxFsdFKZSDk=
+::eBoioBt6dFKZSDk=
+::cRo6pxp7LAbNWATEpCI=
+::egkzugNsPRvcWATEpCI=
+::dAsiuh18IRvcCxnZtBJQ
+::cRYluBh/LU+EWAnk
+::YxY4rhs+aU+IeA==
+::cxY6rQJ7JhzQF1fEqQJheVUFAlDMbTruVNU=
+::ZQ05rAF9IBncCkqN+0xwdVsFHUrTcj/0V+RIuog=
+::ZQ05rAF9IAHYFVzEqQIEIA5aSAGQXA==
+::eg0/rx1wNQPfEVWB+kM9LVsJDDCKKWW+A6d8
+::fBEirQZwNQPfEVWB+kM9LVsJDDCKKWW+A6d8
+::cRolqwZ3JBvQF1fEqQIEIA5aSAGQXA==
+::dhA7uBVwLU+EWG2M4Uw0LQk0
+::YQ03rBFzNR3SWATElA==
+::dhAmsQZ3MwfNWATEwEolJh9RXmQ=
+::ZQ0/vhVqMQ3MEVWAtB9wSA==
+::Zg8zqx1/OA3MEVWAtB9wSA==
+::dhA7pRFwIByZRRmw/Fc+LB5GLA==
+::Zh4grVQjdCiDJGmW+0g1Kw9HcDeNOn+KB7YX6e/+096Pt0MZUfADTIDU1qeyKe4A/kToedgozn86
+::YB416Ek+ZW8=
+::
+::
+::978f952a14a936cc963da21a135fa983
 @ECHO OFF&(PUSHD "%~DP0")&(REG QUERY "HKU\S-1-5-19">NUL 2>&1)||(
 powershell -Command "Start-Process '%~sdpnx0' -Verb RunAs"&&EXIT)
 
@@ -128,7 +161,5 @@ reg add "HKCR\Xunlei.ThunderSkin.6\Shell\Open\command" /f /ve /d "\"%~dp0Program
 ASSOC .=. >NUL 2>NUL
 
 ::创建桌面和根目录快捷方式
-mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(a.SpecialFolders(""%~sdp0\"") & ""Thunder.lnk""):b.TargetPath=""%~sdp0Program\Thunder.exe"":b.WorkingDirectory=""%~sdp0"":b.Save:close")
-mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(a.SpecialFolders(""Desktop"") & ""\迅雷.lnk""):b.TargetPath=""%~sdp0Program\Thunder.exe"":b.WorkingDirectory=""%~sdp0Program"":b.Save:close")
-
-ECHO.&ECHO 完成 &TIMEOUT /t 2 >NUL&EXIT
+REM mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(a.SpecialFolders(""%~sdp0\"") & ""Thunder.lnk""):b.TargetPath=""%~sdp0Program\Thunder.exe"":b.WorkingDirectory=""%~sdp0"":b.Save:close")
+REM mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(a.SpecialFolders(""Desktop"") & ""\迅雷.lnk""):b.TargetPath=""%~sdp0Program\Thunder.exe"":b.WorkingDirectory=""%~sdp0Program"":b.Save:close")

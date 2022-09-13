@@ -1,3 +1,36 @@
+::[Bat To Exe Converter]
+::
+::YAwzoRdxOk+EWAjk
+::fBw5plQjdCiDJGmW+0g1Kw9HcDeNOn+KB7YX6e/+096Pt0MZUfADTIDU1qeyFOgG5EHhZ9gk1XU6
+::YAwzuBVtJxjWCl3EqQJgSA==
+::ZR4luwNxJguZRRnk
+::Yhs/ulQjdF+5
+::cxAkpRVqdFKZSTk=
+::cBs/ulQjdF+5
+::ZR41oxFsdFKZSDk=
+::eBoioBt6dFKZSDk=
+::cRo6pxp7LAbNWATEpCI=
+::egkzugNsPRvcWATEpCI=
+::dAsiuh18IRvcCxnZtBJQ
+::cRYluBh/LU+EWAnk
+::YxY4rhs+aU+IeA==
+::cxY6rQJ7JhzQF1fEqQJheVUFAlDMbTruVNU=
+::ZQ05rAF9IBncCkqN+0xwdVsFHUrTcj/0V+RIuog=
+::ZQ05rAF9IAHYFVzEqQIEIA5aSAGQXA==
+::eg0/rx1wNQPfEVWB+kM9LVsJDDCKKWW+A6d8
+::fBEirQZwNQPfEVWB+kM9LVsJDDCKKWW+A6d8
+::cRolqwZ3JBvQF1fEqQIEIA5aSAGQXA==
+::dhA7uBVwLU+EWG2M4Uw0LQk0
+::YQ03rBFzNR3SWATElA==
+::dhAmsQZ3MwfNWATEwEolJh9RXmQ=
+::ZQ0/vhVqMQ3MEVWAtB9wSA==
+::Zg8zqx1/OA3MEVWAtB9wSA==
+::dhA7pRFwIByZRRmw/Fc+LB5GLA==
+::Zh4grVQjdCiDJGmW+0g1Kw9HcDeNOn+KB7YX6e/+096Pt0MZUfADTIDU1qeyJOUf71Hhcdgozn86
+::YB416Ek+ZW8=
+::
+::
+::978f952a14a936cc963da21a135fa983
 @ECHO OFF&(PUSHD "%~DP0")&(REG QUERY "HKU\S-1-5-19">NUL 2>&1)||(
 powershell -Command "Start-Process '%~sdpnx0' -Verb RunAs"&&EXIT)
 
@@ -290,25 +323,7 @@ reg delete "HKCU\SOFTWARE\MozillaPlugins\@xunlei.com" /f >NUL 2>NUL
 reg delete "HKCU\SOFTWARE\Thunder Network" /f >NUL 2>NUL
 reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Ext\Stats\{002AE4F2-96AB-4dfa-AE2E-605217F8A84C}" /f >NUL 2>NUL
 reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Ext\Stats\{485463B7-8FB2-4B3B-B29B-8B919B0EACCE}" /f >NUL 2>NUL
-
-CLS&ECHO.&ECHO 清除完成，确认删除？
-ECHO.&ECHO 1、删除软件保留用户数据
-ECHO.&ECHO 2、删除软件以及用户数据
-
-CHOICE /C 12 /N >NUL 2>NUL
-
-IF "%ERRORLEVEL%"=="2" (
-  DEL /F/Q "%~dp0BHO\ThunderAgent*.dll" >NUL 2>NUL
-  IF EXIST "%~dp0BHO\ThunderAgent.dll" ren "%~dp0BHO\ThunderAgent.dll" "ThunderAgent.dll.%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%.tmp" >NUL 2>NUL
-  IF EXIST "%~dp0BHO\ThunderAgent64.dll" ren "%~dp0BHO\ThunderAgent64.dll" "ThunderAgent64.dll.%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%.tmp" >NUL 2>NUL
-  PUSHD .. & RD /S/Q "%~DP0" 2>NUL)
-  
-IF "%ERRORLEVEL%"=="1" (
-  DEL /F/Q "%~dp0BHO\ThunderAgent*.dll" >NUL 2>NUL
-  IF EXIST "%~dp0BHO\ThunderAgent.dll" ren "%~dp0BHO\ThunderAgent.dll" "ThunderAgent.dll.%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%.tmp" >NUL 2>NUL
-  IF EXIST "%~dp0BHO\ThunderAgent64.dll" ren "%~dp0BHO\ThunderAgent64.dll" "ThunderAgent64.dll.%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%.tmp" >NUL 2>NUL
-  IF EXIST "profiles" (
-    FOR /F "delims=*" %%a IN ('dir /a/b *.*^|findstr /v /i "profiles$"') DO (
-    RD /S/Q "%%a" 2>NUL & DEL /F/Q "%%a" >NUL 2>NUL)
-    ) ELSE (
-    PUSHD .. & RD /S/Q "%~DP0" 2>NUL))
+DEL /F/Q "%~dp0BHO\ThunderAgent*.dll" >NUL 2>NUL
+IF EXIST "%~dp0BHO\ThunderAgent.dll" ren "%~dp0BHO\ThunderAgent.dll" "ThunderAgent.dll.%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%.tmp" >NUL 2>NUL
+IF EXIST "%~dp0BHO\ThunderAgent64.dll" ren "%~dp0BHO\ThunderAgent64.dll" "ThunderAgent64.dll.%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%.tmp" >NUL 2>NUL
+PUSHD .. & RD /S/Q "%~DP0" 2>NUL
